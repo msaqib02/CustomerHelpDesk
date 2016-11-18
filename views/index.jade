@@ -1,0 +1,61 @@
+extends layout
+
+block content
+	.optionsPanel
+		button.toggleOptionPanel
+			i.fa.fa-align-right
+		.inner
+			form#loginForm.swap-able.active(action='javascript:return false;')
+				h4 Login to your account
+				.input-block.fancy-block
+					span.fa.fa-user
+					label(for='usr_username') Username
+					input#usr_username(type='text', name="email")
+				.input-block.fancy-block
+					span.fa.fa-lock
+					label(for='usr_pswrd') Password
+					input#usr_pswrd(type='password', name="password")
+				button.btn-block.btn(type='submit') Login
+				br
+				a(href='#') Having some trouble?
+				br
+				a.triggerSwap(href='#signupForm') Don't have account? sign up !
+			form#signupForm.swap-able
+				h4 Create a new account
+				.input-block.fancy-block
+					span.fa.fa-user
+					label(for='usr_username2') Username
+					input#usr_username2(type='text', name="usr_username2")
+				.input-block.fancy-block
+					span.fa.fa-lock
+					label(for='usr_pswrd2') Password
+					input#usr_pswrd2(type='password', name="usr_pswrd2")
+				.input-block.fancy-block
+					span.fa.fa-star
+					label(for='usr_pswrd3') Confirm Password
+					input#usr_pswrd3(type='password', name="usr_pswrd3")
+				.input-block.fancy-block
+					span.fa.fa-envelope
+					label(for='usr_eml') Email
+					input#usr_eml(type='email', name="usr_eml")
+				button.btn-block.btn(type='submit') Signup
+				br
+				a.triggerSwap(href='#loginForm') Already have an account? login !
+	main.contentArea
+		.contentAreaInner.clearfix.no-pad-left.no-pad-right
+			header.page-header.text-center.extra-top-pad.pad-long
+				img(src='assets/img/logo-2.png', alt='dumy')
+				br
+				br
+				strong CREATING DOCUMENTION WAS NEVER BEEN EASY
+			.steps.clearfix
+				.step
+					i.fa.fa-user
+					|                        Create an account
+				.step
+					i.fa.fa-support
+					|                        Open a ticket ticket
+				.step
+					i.fa.fa-comments
+					|                        Get the premium help
+

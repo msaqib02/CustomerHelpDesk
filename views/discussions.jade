@@ -1,0 +1,54 @@
+extends layout
+
+block content
+
+	.optionsPanel
+		button.toggleOptionPanel
+			i.fa.fa-align-right
+		.inner
+			.search-widget
+				form
+					.input-block
+						label(for='searchDocs') SEARCH ANYTHING
+						input#searchDocs(type='text')
+					button(type='submit')
+						i.fa.fa-search
+	main.contentArea
+		.contentAreaInner.small-canvas.clearfix(style="display:none")
+
+			header.page-header.user-widget-wrap
+				h1 All Tickets
+				.user-widget.top-right
+					figure
+						img(src='assets/img/author.jpg', alt='')
+					cite#userName Joe Khan
+			form#addTicketForm
+				br
+				br
+				.tickets
+					.tickets-header
+						h2 
+						.form-group.form-inline
+							.search-widget
+								form
+									.input-block
+										label(for='searchDocs') SEARCH ANYTHING
+										input#searchTickets(type='text', data-bind="value: titleSearch ")
+									button(data-bind="click: searchData")
+										i.fa.fa-search
+					table.table.table-striped
+						thead
+							th Title
+							th Description
+							th Email
+							th
+						tbody(data-bind='foreach: discussionsList()')
+							td(data-bind='text: title')
+							td(data-bind='text: description')
+							td(data-bind='text: email')
+							td
+								a(data-bind="attr:{ href: '/ticketDetail?id=' + _id}") View
+		script(src='/assets/js/authenticate.js')
+		script(src='/assets/js/addTickets.js')
+		script(src='/assets/js/knockout-3.4.1.js')
+		script(src='/assets/js/discussions.js')

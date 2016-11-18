@@ -1,0 +1,75 @@
+extends layout
+
+block content
+
+	.optionsPanel
+		button.toggleOptionPanel
+			i.fa.fa-align-right
+		.inner
+			.text-widget
+				h4 What is this?
+				p
+					| Please fill following details which are specific to only this topic. It could help to solve your issue quickly.
+				ul.icon-list
+					li
+						i.fa.fa-hand-o-right
+						|  It will be only visible to you and staff.
+					li
+						i.fa.fa-hand-o-right
+						|  It will effect the time frame positively
+			br
+			form
+				h4
+					i.fa.fa-globe
+					|  Website Credentials
+				.input-block.fancy-block
+					span.fa.fa-link
+					label(for='topic_web_url') URL
+					input#topic_web_url(type='url')
+				.input-block.fancy-block
+					span.fa.fa-user
+					label(for='topic_web_un') username
+					input#topic_web_un(type='text')
+				.input-block.fancy-block
+					span.fa.fa-lock
+					label(for='topic_web_pw') Password
+					input#topic_web_pw(type='password')
+	main.contentArea
+		.contentAreaInner.clearfix
+			.heading
+				h1(data-bind="{text:discussion().title}")
+				br
+				p(data-bind="{text:discussion().description}")
+				hr
+			.discussion-area
+				.topic-comments(data-bind='foreach: commentsList()')
+					.comment.user-comment
+						.comment-content
+							p(data-bind="{text:message}")
+						cite.commentator
+							span.auth-dp
+							span(data-bind="text:userName")
+					
+				hr
+				h4 Add a comment
+				form#addCommentForm
+					.input-block
+						label(for='writeDetails') How can we help you?
+						textarea#writeDetails.text-area-sm
+					br
+					.custom-checkbox
+						input#followup-check(type='checkbox')
+						label(for='followup-check')
+							span
+							|                                 Notify me of follow-up replies
+					br
+					br
+					button.btn#btnPostData(type="submit")
+						i.fa.fa-hashtag
+						| POST Reply
+		// contenAreaInner
+
+	script(src='/assets/js/authenticate.js')
+	script(src='/assets/js/addTickets.js')
+	script(src='/assets/js/knockout-3.4.1.js')
+	script(src='/assets/js/discussionDetail.js')

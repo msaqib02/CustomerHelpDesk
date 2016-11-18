@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	main.contentArea
+	.contentAreaInner.clearfix.no-pad-left.no-pad-right(style="display:none")
+		header.page-header.text-center.extra-top-pad
+			#logout(href='#') Sign Out 
+			br
+			h1
+				| ARE 
+				span YOU
+				|  LOST?
+			strong
+				| Let’s community help you to fix issue
+				br
+				a(href='/createTicket') ask a question now
+				br
+				a
+				
+		.empty-graphics-div.text-center
+			img(src='assets/img/graphicss2.png', alt='')
+		.text-center
+			a.btn.btn-lg(href='/createTicket')
+				i.fa.fa-hashtag
+				| POST QUESTION
+
+	script(src='/assets/js/authenticate.js')

@@ -1,0 +1,45 @@
+extends layout
+
+block content
+
+	.optionsPanel
+		button.toggleOptionPanel
+			i.fa.fa-align-right
+		.inner
+			.search-widget
+				form
+					.input-block
+						label(for='searchDocs') SEARCH ANYTHING
+						input#searchDocs(type='text')
+					button(type='submit')
+						i.fa.fa-search
+	main.contentArea
+		.contentAreaInner.small-canvas.clearfix(style="display:none")
+			header.page-header.user-widget-wrap
+				h1 Create New Topic
+				.user-widget.top-right
+					figure
+						img(src='assets/img/author.jpg', alt='')
+					cite#userName Joe Khan
+			form#addTicketForm
+				
+				.input-block
+					label(for='giveTitle') Your Question
+					input#giveTitle(type='text',name="title")
+				.input-block
+					label(for='writeDetails') Write to describe...
+					textarea#writeDetails(name="writeDetails")
+				.custom-checkbox
+					input#followup-check(type='checkbox')
+					label(for='followup-check')
+						span
+						|                             Notify me of follow-up replies
+				br
+				br
+				br
+				.text-center
+					button.btn.btn-lg(type='submit')
+						i.fa.fa-hashtag
+						| POST QUESTION
+		script(src='/assets/js/authenticate.js')
+		script(src='/assets/js/addTickets.js')

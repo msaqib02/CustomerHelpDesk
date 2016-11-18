@@ -1,0 +1,71 @@
+doctype html
+html(lang='')
+  head
+    title XDocs - A Knowledge base and documentation support application
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='msapplication-tap-highlight', content='no')
+    meta(name='mobile-web-app-capable', content='yes')
+    meta(name='application-name', content='xDocs')
+    link(rel='icon', sizes='192x192', href='/assets/img/basic/chrome-touch-icon-192x192.png')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black')
+    meta(name='apple-mobile-web-app-title', content='Web Starter Kit')
+    link(rel='apple-touch-icon', href='/assets/img/basic/apple-touch-icon.png')
+    meta(name='msapplication-TileImage', content='/assets/img/basic/ms-touch-icon-144x144-precomposed.png')
+    meta(name='msapplication-TileColor', content='#55acee')
+    meta(name='theme-color', content='#55acee')
+    link(href='/assets/css/style.css', rel='stylesheet', type='text/css')
+    link(href='/assets/css/custom.css', rel='stylesheet', type='text/css')
+    script(src='/assets/lib/jquery/dist/jquery.min.js')
+    
+    link(href='/assets/css/grids.css', rel='stylesheet', type='text/css')
+  body.quickSectionActive
+    .bodyWrap
+      header.doc-header
+        .logoWrap
+          a(href='index.html')
+            img(src='/assets/img/basic/logo.png', alt='/', width='109', height='43')
+        a.nav-trigger(href='#')
+          i.fa.fa-navicon
+        ul.main-nav
+          li
+            a(href='/home') Home
+        
+          li
+            a(href='/createTicket') Create Ticket
+          li
+            a(href='/knowledgeBase') Knowledge Base
+          li
+            a#myTicketsLi(href='/discussions') My Tickets
+          li
+            a#logoff(href='#') Sign out 
+        ul.socialLinks
+          li
+            a(href='http://facebook.com/', target='_blank')
+              i.fa.fa-home
+          li
+            a(href='http://facebook.com/', target='_blank')
+              i.fa.fa-facebook
+          li
+            a(href='http://facebook.com/', target='_blank')
+              i.fa.fa-twitter
+          li
+            a(href='http://facebook.com/', target='_blank')
+              i.fa.fa-linkedin
+          li
+            a(href='http://facebook.com/', target='_blank')
+              i.fa.fa-github
+          li
+            a(href='http://facebook.com/', target='_blank')
+              i.fa.fa-envelope
+          li
+            a(href='http://facebook.com/', target='_blank')
+              i.fa.fa-rss
+        span.copyRights © 2016, All rights reserved
+      button.toggleOptionPanel
+        i.fa.fa-align-right
+      block content
+    script(src='/assets/js/app.js')
