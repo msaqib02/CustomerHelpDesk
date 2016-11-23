@@ -26,7 +26,8 @@ require('./app_api/config/passport');
 var routesApi = require('./app_api/routes/index');
 
 var app = express();
-
+app.set('port', process.env.PORT || 9000);
+app.set('base url', process.env.URL || "http://localhost");
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
