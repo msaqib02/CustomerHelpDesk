@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var gracefulShutdown;
-var dbURI = 'mongodb://xDoc:P@ssw0rd@ds050869.mlab.com:50869/xdoc';
+var dbURI = 'mongodb://xDoc:Xavor123@ds050869.mlab.com:50869/xdoc';
 if (process.env.NODE_ENV === 'production') {
   dbURI = process.env.MONGOLAB_URI;
 }
